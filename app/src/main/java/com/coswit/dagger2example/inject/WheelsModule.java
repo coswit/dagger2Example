@@ -1,4 +1,8 @@
-package com.coswit.dagger2example;
+package com.coswit.dagger2example.inject;
+
+import com.coswit.dagger2example.Rims;
+import com.coswit.dagger2example.Tires;
+import com.coswit.dagger2example.Wheels;
 
 import dagger.Module;
 import dagger.Provides;

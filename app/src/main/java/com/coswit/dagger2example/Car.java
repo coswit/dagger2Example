@@ -2,6 +2,8 @@ package com.coswit.dagger2example;
 
 import android.util.Log;
 
+import com.coswit.dagger2example.engine.Engine;
+
 import javax.inject.Inject;
 
 /**
@@ -20,6 +22,7 @@ public class Car {
     }
 
     public void drive() {
+        engine.start();
         Log.d(TAG, "driving...");
     }
 
