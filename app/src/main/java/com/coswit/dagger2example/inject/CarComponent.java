@@ -8,7 +8,7 @@ import dagger.Component;
 /**
  * @author Created by zhengjing on 2019-11-04.
  */
-@Component(modules = {WheelsModule.class,PetrolEngineModule.class})
+@Component(modules = {WheelsModule.class,DieselEngineModule.class})
 public interface CarComponent {
 
     Car getCar();
