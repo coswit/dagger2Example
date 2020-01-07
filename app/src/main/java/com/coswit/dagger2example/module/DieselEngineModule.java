@@ -1,4 +1,4 @@
-package com.coswit.dagger2example.inject;
+package com.coswit.dagger2example.module;
 
 import com.coswit.dagger2example.engine.DieselEngine;
 import com.coswit.dagger2example.engine.Engine;

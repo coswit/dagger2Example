@@ -4,15 +4,16 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.coswit.dagger2example.inject.CarComponent;
-import com.coswit.dagger2example.inject.DaggerCarComponent;
+import com.coswit.dagger2example.car.Car;
+import com.coswit.dagger2example.component.CarComponent;
+import com.coswit.dagger2example.component.DaggerCarComponent;
 
 import javax.inject.Inject;
 
 public class MainActivity extends AppCompatActivity {
 
     @Inject
-    Car car;
+    Car car1,car2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +31,10 @@ public class MainActivity extends AppCompatActivity {
                 .build();
         component.inject(this);
 
-        Car car = component.getCar();
-        car.drive();
+//        Car car = component.getCar();
+//        car.drive();
+
+        car1.drive();
+        car2.drive();
     }
 }

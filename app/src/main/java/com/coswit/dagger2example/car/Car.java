@@ -1,7 +1,8 @@
-package com.coswit.dagger2example;
+package com.coswit.dagger2example.car;
 
 import android.util.Log;
 
+import com.coswit.dagger2example.driver.Driver;
 import com.coswit.dagger2example.engine.Engine;
 
 import javax.inject.Inject;
@@ -14,20 +15,22 @@ public class Car {
 
     private Engine engine;
     private Wheels wheels;
+    private Driver driver;
 
     @Inject
-    public Car(Engine engine, Wheels wheels) {
+    public Car(Driver driver, Engine engine, Wheels wheels) {
         this.engine = engine;
         this.wheels = wheels;
+        this.driver = driver;
     }
 
     public void drive() {
         engine.start();
-        Log.d(TAG, "driving...");
+        Log.d(TAG, driver + " drives " + this);
     }
 
     @Inject
-    public void enableRemote(Remote remote){
+    public void enableRemote(Remote remote) {
         remote.setListener(this);
     }
 }

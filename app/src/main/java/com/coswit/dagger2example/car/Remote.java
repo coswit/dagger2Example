@@ -1,4 +1,4 @@
-package com.coswit.dagger2example;
+package com.coswit.dagger2example.car;
 
 import android.util.Log;
 
