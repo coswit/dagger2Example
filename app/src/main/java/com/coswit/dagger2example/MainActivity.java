@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.coswit.dagger2example.car.Car;
 import com.coswit.dagger2example.component.ActivityComponent;
-import com.coswit.dagger2example.module.DieselEngineModule;
 
 import javax.inject.Inject;
 
@@ -37,8 +36,15 @@ public class MainActivity extends AppCompatActivity {
 
 
         App app = (App) getApplication();
-        ActivityComponent component = app.getAppComponent().getActivityComponent(new DieselEngineModule(100));
+//        ActivityComponent component = app.getAppComponent().getActivityComponent(new DieselEngineModule(100));
+//        component.inject(this);
+
+        ActivityComponent component = app.getAppComponent().getActivityComponentBuilder()
+                .horsePower(200)
+                .engineCapacity(300)
+                .build();
         component.inject(this);
+
         car1.drive();
         car2.drive();
     }
