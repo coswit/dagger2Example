@@ -1,6 +1,6 @@
 package com.coswit.dagger2example.component;
 
-import com.coswit.dagger2example.driver.Driver;
+import com.coswit.dagger2example.module.DieselEngineModule;
 import com.coswit.dagger2example.module.DriverModule;
 
 import javax.inject.Singleton;
@@ -14,6 +14,7 @@ import dagger.Component;
 @Component(modules = DriverModule.class)
 public interface AppComponent {
 
-    Driver getDriver();
+//    Driver getDriver();
 
+    ActivityComponent getActivityComponent(DieselEngineModule module);
 }
