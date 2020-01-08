@@ -13,11 +13,16 @@ import dagger.Provides;
 @Module
 public class DriverModule {
 
+    private String driverName;
+
+    public DriverModule(String driverName) {
+        this.driverName = driverName;
+    }
 
     @Singleton
     @Provides
     Driver providerDriver(){
-        return  new Driver();
+        return  new Driver(driverName);
     }
 
 }
